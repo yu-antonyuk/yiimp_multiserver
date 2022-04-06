@@ -27,13 +27,15 @@ define('"'"'YAAMP_RENTAL'"'"', false);
 
 define('"'"'YAAMP_LIMIT_ESTIMATE'"'"', false);
 
+define('"'"'YAAMP_FEES_SOLO'"'"', 1);
+
 define('"'"'YAAMP_FEES_MINING'"'"', 0.5);
 define('"'"'YAAMP_FEES_EXCHANGE'"'"', 2);
 define('"'"'YAAMP_FEES_RENTING'"'"', 2);
 define('"'"'YAAMP_TXFEE_RENTING_WD'"'"', 0.002);
 
-define('"'"'YAAMP_PAYMENTS_FREQ'"'"', 3*60*60);
-define('"'"'YAAMP_PAYMENTS_MINI'"'"', 0.001);
+define('"'"'YAAMP_PAYMENTS_FREQ'"'"', 1*30*60);
+define('"'"'YAAMP_PAYMENTS_MINI'"'"', 0.01);
 
 define('"'"'YAAMP_ALLOW_EXCHANGE'"'"', false);
 define('"'"'YIIMP_PUBLIC_EXPLORER'"'"', false);
@@ -54,7 +56,7 @@ define('"'"'YAAMP_ADMIN_WEBCONSOLE'"'"', true);
 define('"'"'YAAMP_CREATE_NEW_COINS'"'"', false);
 define('"'"'YAAMP_NOTIFY_NEW_COINS'"'"', false);
 
-define('"'"'YAAMP_DEFAULT_ALGO'"'"', '"'"'x11'"'"');
+define('"'"'YAAMP_DEFAULT_ALGO'"'"', '"'"'x16rv2'"'"');
 
 define('"'"'YAAMP_USE_NGINX'"'"', true);
 
@@ -130,13 +132,15 @@ define('"'"'YAAMP_RENTAL'"'"', false);
 
 define('"'"'YAAMP_LIMIT_ESTIMATE'"'"', false);
 
+define('"'"'YAAMP_FEES_SOLO'"'"', 1);
+
 define('"'"'YAAMP_FEES_MINING'"'"', 0.5);
 define('"'"'YAAMP_FEES_EXCHANGE'"'"', 2);
 define('"'"'YAAMP_FEES_RENTING'"'"', 2);
 define('"'"'YAAMP_TXFEE_RENTING_WD'"'"', 0.002);
 
-define('"'"'YAAMP_PAYMENTS_FREQ'"'"', 3*60*60);
-define('"'"'YAAMP_PAYMENTS_MINI'"'"', 0.001);
+define('"'"'YAAMP_PAYMENTS_FREQ'"'"', 1*30*60);
+define('"'"'YAAMP_PAYMENTS_MINI'"'"', 0.01);
 
 define('"'"'YAAMP_ALLOW_EXCHANGE'"'"', false);
 define('"'"'YIIMP_PUBLIC_EXPLORER'"'"', false);
@@ -200,8 +204,8 @@ $cold_wallet_table = array(
 // Sample fixed pool fees
 $configFixedPoolFees = array(
 '"'"'zr5'"'"' => 2.0,
-'"'"'scrypt'"'"' => 20.0,
-'"'"'sha256'"'"' => 5.0,
+'"'"'scrypt'"'"' => 2.0,
+'"'"'sha256'"'"' => 2.0,
 );
 
 // Sample custom stratum ports
@@ -211,6 +215,6 @@ $configCustomPorts = array(
 
 // mBTC Coefs per algo (default is 1.0)
 $configAlgoNormCoef = array(
-// '"'"'x11'"'"' => 5.0,
+// '"'"'x11'"'"' => 1.0,
 );' | sudo -E tee $STORAGE_ROOT/yiimp/site/configuration/serverconfig.php >/dev/null 2>&1;
 fi
