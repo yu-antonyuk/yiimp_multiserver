@@ -1,7 +1,6 @@
-#####################################################
-# Source code from https://codereview.stackexchange.com/questions/55077/small-bash-script-to-start-and-stop-named-services
-# Updated by cryptopool.builders for crypto use...
-#####################################################
+###########################################
+# Created by Dirty Harry for YiiMP use... #
+###########################################
 
 source /etc/multipool.conf
 source $STORAGE_ROOT/yiimp/.yiimp.conf
@@ -218,6 +217,18 @@ a5astop='screen -X -S a5a quit'
 
 x16rv2="screen -dmS x16rv2 bash $STRATUM_DIR/run.sh x16rv2"
 x16rv2stop='screen -X -S x16rv2 quit'
+
+curvehash="screen -dmS curvehash bash $STRATUM_DIR/run.sh curvehash"
+curvehashstop='screen -X -S curvehash quit'
+
+x11k="screen -dmS x11k bash $STRATUM_DIR/run.sh x11k"
+x11kstop='screen -X -S x11k quit'
+
+megabtx="screen -dmS megabtx bash $STRATUM_DIR/run.sh megabtx"
+megabtxstop='screen -X -S megabtx quit'
+
+megamec="screen -dmS megamec bash $STRATUM_DIR/run.sh megamec"
+megamecstop='screen -X -S megamec quit'
 
 startstop_service() {
     cmd=$1
@@ -1135,6 +1146,57 @@ startstop_x16rv2() {
     esac
 }
 
+startstop_curvehash() {
+    cmd=$1
+    case $cmd in
+        stop) $curvehashstop ;;
+        start) $curvehash ;;
+        restart)
+            $curvehashstop
+            sleep 1
+            $curvehash
+            ;;
+    esac
+}
+
+startstop_x11k() {
+    cmd=$1
+    case $cmd in
+        stop) $x11kstop ;;
+        start) $x11k ;;
+        restart)
+            $x11kstop
+            sleep 1
+            $x11k
+            ;;
+    esac
+}
+
+startstop_megabtx() {
+    cmd=$1
+    case $cmd in
+        stop) $megabtxstop ;;
+        start) $megabtx ;;
+        restart)
+            $megabtxstop
+            sleep 1
+            $megabtx
+            ;;
+    esac
+}
+
+startstop_megamec() {
+    cmd=$1
+    case $cmd in
+        stop) $megamecstop ;;
+        start) $megamec ;;
+        restart)
+            $megamecstop
+            sleep 1
+            $megamec
+            ;;
+    esac
+}
 
 case "$1" in
     start|stop|restart) cmd=$1 ;;
@@ -1218,6 +1280,10 @@ for name; do
     tribus) startstop_tribus $cmd ;;
     a5a) startstop_a5a $cmd ;;
     x16rv2) startstop_x16rv2 $cmd ;;
+    curvehash) startstop_curvehash $cmd ;;
+    x11k) startstop_x11k $cmd ;;
+    megabtx) startstop_megabtx $cmd ;;
+    megamec) startstop_megamec $cmd ;;
         *) startstop_service $cmd $name ;;
     esac
 done

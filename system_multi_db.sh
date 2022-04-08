@@ -62,7 +62,10 @@ echo -e " Installing Base system packages...$COL_RESET"
 apt_install python3 python3-dev python3-pip \
 wget curl git sudo coreutils bc \
 haveged pollinate unzip ntpdate \
-unattended-upgrades cron ntp fail2ban screen
+unattended-upgrades cron ntp fail2ban screen \
+sudo apt-get install -y php7.3-memcache \
+sudo apt install php-mysql \
+sudo apt install php-curl
 echo -e "$GREEN Done...$COL_RESET"
 
 # ### Seed /dev/urandom
@@ -87,6 +90,22 @@ if [[ ("$CoinPort" == "y" || "$CoinPort" == "Y" || "$CoinPort" == "yes" || "$Coi
 	sudo git fetch
 	sudo git checkout multi-port
 fi
+
+echo -e " Downloading Low Difficulty Stratum...$COL_RESET"
+cd $STORAGE_ROOT/yiimp/yiimp_setup/yiimp
+hide_output sudo git clone https://github.com/DirtyHarryDev/stratum-lowdiff.git
+sleep 2s
+
+echo -e " Downloading Full Stratum...$COL_RESET"
+cd $STORAGE_ROOT/yiimp/yiimp_setup/yiimp
+hide_output sudo git clone https://github.com/DirtyHarryDev/stratum-full.git
+sleep 2s
+
+echo -e " Downloading Zentoshi Stratum...$COL_RESET"
+cd $STORAGE_ROOT/yiimp/yiimp_setup/yiimp
+hide_output sudo git clone https://github.com/DirtyHarryDev/stratum-zenx.git
+sleep 2s
+
 echo -e "$GREEN Done...$COL_RESET"
 
 cd $HOME/multipool/yiimp_multi

@@ -118,6 +118,7 @@ php-pear php-auth-sasl mcrypt imagemagick libruby \
 php7.3-curl php7.3-intl php7.3-pspell php7.3-recode php7.3-sqlite3 \
 php7.3-tidy php7.3-xmlrpc php7.3-xsl memcached php-memcache \
 php-imagick php-gettext php7.3-zip php7.3-mbstring \
+sudo apt-get install -y php7.3-memcache \
 fail2ban ntpdate python3 python3-dev python3-pip \
 curl git sudo coreutils pollinate unzip unattended-upgrades cron mariadb-client \
 nginx pwgen gnupg2 ca-certificates lsb-release nginx certbot;

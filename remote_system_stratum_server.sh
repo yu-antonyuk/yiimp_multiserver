@@ -120,5 +120,21 @@ if [[ ("$CoinPort" == "y" || "$CoinPort" == "Y" || "$CoinPort" == "yes" || "$Coi
 	sudo git checkout multi-port
   wait $!
 fi
+
+echo -e " Downloading Low Difficulty Stratum...$COL_RESET"
+cd $STORAGE_ROOT/yiimp/yiimp_setup/yiimp
+hide_output sudo git clone https://github.com/DirtyHarryDev/stratum-lowdiff.git
+sleep 2s
+
+echo -e " Downloading Full Stratum...$COL_RESET"
+cd $STORAGE_ROOT/yiimp/yiimp_setup/yiimp
+hide_output sudo git clone https://github.com/DirtyHarryDev/stratum-full.git
+sleep 2s
+
+echo -e " Downloading Zentoshi Stratum...$COL_RESET"
+cd $STORAGE_ROOT/yiimp/yiimp_setup/yiimp
+hide_output sudo git clone https://github.com/DirtyHarryDev/stratum-zenx.git
+sleep 2s
+
 echo -e "$GREEN Stratum server build completed...$COL_RESET"
 exit 0
