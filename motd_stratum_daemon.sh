@@ -22,6 +22,14 @@ sudo cp -r 00-header 10-sysinfo 90-footer /etc/update-motd.d/
 cd $HOME/multipool/yiimp_multi/ubuntu
 sudo cp -r stratum /usr/bin
 sudo chmod +x /usr/bin/stratum
+sudo cp -r addport /usr/bin
+sudo chmod +x /usr/bin/addport
+sudo cp -r addport-full /usr/bin
+sudo chmod +x /usr/bin/addport-full
+sudo cp -r addport-lowdiff /usr/bin
+sudo chmod +x /usr/bin/addport-lowdiff
+sudo cp -r addport-zenx /usr/bin
+sudo chmod +x /usr/bin/addport-zenx
 
 echo '
 clear
