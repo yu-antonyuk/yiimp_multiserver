@@ -4,7 +4,7 @@
 
 source /etc/functions.sh
 source $STORAGE_ROOT/yiimp/.newconf.conf
-
+echo -e "$GREY run add_strat_db.sh$COL_RESET"
 if [ -d "$HOME/multipool/yiimp_multi" ]; then
   cd $HOME/multipool/yiimp_multi
 else

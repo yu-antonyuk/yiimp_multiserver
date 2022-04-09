@@ -6,7 +6,7 @@
 #####################################################
 source /etc/functions.sh
 source /etc/multipool.conf
-
+echo -e "$GREY run remote_system_stratum_server.sh$COL_RESET"
 echo -e " Building stratum server...$COL_RESET"
 
 if [[ ! -e '$STORAGE_ROOT/yiimp/' ]]; then

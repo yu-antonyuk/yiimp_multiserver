@@ -6,6 +6,7 @@
 #----------------------------------------------------------------------
 # Set up values.
 #----------------------------------------------------------------------
+echo -e "$BLUE run setsid_stratum_server.sh$COL_RESET"
 
 source /etc/multipool.conf
 source $STORAGE_ROOT/yiimp/.yiimp.conf
@@ -122,6 +123,9 @@ cat $functioncopy | setsid ssh ${SSH_OPTIONS} ${StratumUser}@${StratumServer} 'c
 cat $conf | setsid ssh ${SSH_OPTIONS} ${StratumUser}@${StratumServer} 'cat > /tmp/.yiimp.conf'
 cat $screens | setsid ssh ${SSH_OPTIONS} ${StratumUser}@${StratumServer} 'cat > /tmp/screens'
 cat $addport | setsid ssh ${SSH_OPTIONS} ${StratumUser}@${StratumServer} 'cat > /tmp/addport'
+cat $addport | setsid ssh ${SSH_OPTIONS} ${StratumUser}@${StratumServer} 'cat > /tmp/addport-full'
+cat $addport | setsid ssh ${SSH_OPTIONS} ${StratumUser}@${StratumServer} 'cat > /tmp/addport-lowdiff'
+cat $addport | setsid ssh ${SSH_OPTIONS} ${StratumUser}@${StratumServer} 'cat > /tmp/addport-zenx'
 cat $addport_multi | setsid ssh ${SSH_OPTIONS} ${StratumUser}@${StratumServer} 'cat > /tmp/addport_multi'
 cat $header | setsid ssh ${SSH_OPTIONS} ${StratumUser}@${StratumServer} 'cat > /tmp/00-header'
 cat $sysinfo | setsid ssh ${SSH_OPTIONS} ${StratumUser}@${StratumServer} 'cat > /tmp/10-sysinfo'

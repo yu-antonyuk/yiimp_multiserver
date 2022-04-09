@@ -2,7 +2,7 @@
 #####################################################
 # Created by cryptopool.builders for crypto use...
 #####################################################
-
+echo -e "$GREY run motd.sh$COL_RESET"
 source /etc/functions.sh
 source /etc/multipool.conf
 source $STORAGE_ROOT/yiimp/.yiimp.conf
@@ -21,16 +21,6 @@ sudo cp -r 00-header 10-sysinfo 90-footer /etc/update-motd.d/
 cd /tmp
 sudo cp -r screens /usr/bin/
 sudo chmod +x /usr/bin/screens
-sudo cp -r stratum /usr/bin
-sudo chmod +x /usr/bin/stratum
-sudo cp -r addport /usr/bin
-sudo chmod +x /usr/bin/addport
-sudo cp -r addport-full /usr/bin
-sudo chmod +x /usr/bin/addport-full
-sudo cp -r addport-lowdiff /usr/bin
-sudo chmod +x /usr/bin/addport-lowdiff
-sudo cp -r addport-zenx /usr/bin
-sudo chmod +x /usr/bin/addport-zenx
 echo '
 clear
 run-parts /etc/update-motd.d/ | sudo tee /etc/motd

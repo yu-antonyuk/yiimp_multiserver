@@ -4,7 +4,7 @@
 # Source https://mailinabox.email/ https://github.com/mail-in-a-box/mailinabox
 # Updated by cryptopool.builders for crypto use...
 #####################################################
-
+echo -e "$GREY run remote_daemon.sh$COL_RESET"
 source /etc/functions.sh
 source /etc/multipool.conf
 

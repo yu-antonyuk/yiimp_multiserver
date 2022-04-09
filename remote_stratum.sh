@@ -3,7 +3,7 @@
 #####################################################
 # Created by cryptopool.builders for crypto use...
 #####################################################
-
+echo -e "$GREY run remote_stratum.sh$COL_RESET"
 source /etc/functions.sh
 source /etc/multipool.conf
 
@@ -14,8 +14,14 @@ source $STORAGE_ROOT/yiimp/.yiimp.conf
 
 # copy addport to /usr/bin
 sudo chmod +x /tmp/addport
+sudo chmod +x /tmp/addport-full
+sudo chmod +x /tmp/addport-lowdiff
+sudo chmod +x /tmp/addport-zenx
 sudo chmod +x /tmp/addport_multi
 sudo cp -r /tmp/addport /usr/bin
+sudo cp -r /tmp/addport-full /usr/bin
+sudo cp -r /tmp/addport-lowdiff /usr/bin
+sudo cp -r /tmp/addport-zenx /usr/bin
 sudo cp -r /tmp/addport_multi /usr/bin
 
 # make needed directories
@@ -47,7 +53,7 @@ if [[ ("$AutoExchange" == "y" || "$AutoExchange" == "Y" || "$AutoExchange" == "y
   sudo sed -i 's/CFLAGS += -DNO_EXCHANGE/#CFLAGS += -DNO_EXCHANGE/' $STORAGE_ROOT/yiimp/yiimp_setup/yiimp/stratum-full/Makefile
 fi
 hide_output sudo make
-
+wait $!
 cd $STORAGE_ROOT/yiimp/yiimp_setup/yiimp/stratum-lowdiff/iniparser
 hide_output sudo make
 wait $!
@@ -56,7 +62,7 @@ if [[ ("$AutoExchange" == "y" || "$AutoExchange" == "Y" || "$AutoExchange" == "y
   sudo sed -i 's/CFLAGS += -DNO_EXCHANGE/#CFLAGS += -DNO_EXCHANGE/' $STORAGE_ROOT/yiimp/yiimp_setup/yiimp/stratum-lowdiff/Makefile
 fi
 hide_output sudo make
-
+wait $!
 cd $STORAGE_ROOT/yiimp/yiimp_setup/yiimp/stratum-zenx/iniparser
 hide_output sudo make
 wait $!

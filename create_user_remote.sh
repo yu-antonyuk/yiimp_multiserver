@@ -9,6 +9,7 @@
 
 # Need this in case user has a provider that offers private IP's and doesnt re-run the multipool installer after user creation
 # Make sure our functions are loaded
+echo -e "$GREY run create_user_remote.sh$COL_RESET"
 if [ -f /etc/functions.sh ]; then
   source /etc/functions.sh
 else
