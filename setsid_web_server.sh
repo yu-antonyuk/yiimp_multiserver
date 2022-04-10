@@ -2,7 +2,7 @@
 # Code from https://www.exratione.com/2014/08/bash-script-ssh-automation-without-a-password-prompt/
 # Updated by cryptopool.builders for crypto use...
 #####################################################
-
+echo -e "$BLUE run setsid_web_server.sh$COL_RESET"
 #----------------------------------------------------------------------
 # Set up values.
 #----------------------------------------------------------------------

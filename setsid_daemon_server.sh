@@ -6,6 +6,7 @@
 #----------------------------------------------------------------------
 # Set up values.
 #----------------------------------------------------------------------
+echo -e "$BLUE run setsid_daemon_server.sh$COL_RESET"
 
 source /etc/multipool.conf
 source $STORAGE_ROOT/yiimp/.yiimp.conf

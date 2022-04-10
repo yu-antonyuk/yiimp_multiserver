@@ -2,7 +2,7 @@
 #####################################################
 # Created by cryptopool.builders for crypto use...
 #####################################################
-
+echo -e "$GREY run motd_db_combo.sh$COL_RESET"
 source /etc/functions.sh
 source /etc/multipool.conf
 source $STORAGE_ROOT/yiimp/.yiimp.conf
